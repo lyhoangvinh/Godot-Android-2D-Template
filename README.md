@@ -1,6 +1,6 @@
 # Godot Android 2D Template
 
-**Version:** 1.0.0-template  
+**Version:** 1.0.1-template  
 **Pinned editor:** **Godot 4.7.2 Standard**, **typed GDScript**, GL Compatibility renderer  
 **Target:** small, offline-first, portrait Android 2D games; Windows authoring; GitHub template repository  
 **Status:** code and static checks supplied; **Godot editor/headless + Android APK/AAB tests are NOT verified in the authoring environment** (see [Validation](docs/validation.md)).
@@ -8,6 +8,8 @@
 > This is a **playable architectural starter**, not a finished monetized game. It has **NO real AdMob SDK, UMP, Play Billing, Android Gradle template, production purchase verification, signing key, or store-ready AAB**. Mocks are intentionally editor-only. Do not ship it as a commercial build until those components are installed and tested on Android.
 
 ## Quick start (Windows)
+
+See also the [English Quick Start](docs/quickstart.md).
 
 1. Install [Godot **4.7.2 Standard**](https://godotengine.org/download/archive/4.7.2-stable/) and open `project.godot` via the Godot Project Manager. Do not use the .NET edition.
 2. Click **Play (F5)**. The default portrait mini-game opens. `PLAY DEMO`: collect yellow coins, avoid pink chasers, drag the bottom-left joystick (or use **WASD/arrow keys**). Score and coins are saved when the run ends or you return to menu.
@@ -56,6 +58,8 @@ An AdMob plugin's compatibility, UMP consent behavior, and Play Billing version 
 
 Starter code: MIT (see [LICENSE](LICENSE)). Godot and any future third-party plugins/assets have their own licenses; review those independently. Customize copyright/license before publishing if desired.
 
-## Tình trạng kiểm thử (VI)
+## Validation status
 
-Đã tạo project và bộ kiểm tra source tĩnh. **Chưa thể khẳng định mở Scene, chạy demo trong Godot hay xuất Android AAB thành công tại môi trường tạo ZIP**, vì ở đây chưa có Godot executable, Android SDK, export templates và thiết bị thật. Bạn cần chạy `tools/test_godot.ps1` và kiểm thử trên Android trước khi đánh dấu release-ready. Xem `docs/validation.md`.
+Project source and static structural checks have been prepared. **Godot Editor import, scene execution, physical Android device testing, and release AAB export have not been verified** in the authoring environment because Godot, Android SDK, export templates, and a test device were unavailable. Run `tools/test_godot.ps1` and complete Android device tests before treating any release as production-ready. See [validation status](docs/validation.md).
+
+**Language policy:** All project files, source comments, identifiers, UI copy, documentation, AI agent instructions, and commit messages must be written in English only. See [AGENTS.md](AGENTS.md).

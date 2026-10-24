@@ -2,6 +2,8 @@
 
 Read before ANY code change. Applies to Claude, Codex, ChatGPT, and other coding agents.
 
+**Mandatory language policy:** All repository content must be written in English only, including source code, comments, identifiers, scene/node names, UI strings, documentation, filenames, prompts, tool-generated reports, and commit messages. Never include Vietnamese in the project. Communicate with the project owner outside the repository in their preferred chat language if necessary.
+
 1. **Starting point:** use this exact source tree and pinned Godot **4.7.2 Standard**. Do not regenerate the project from scratch, silently upgrade the engine/plugins or add .NET/C#.
 2. **Architecture:** features under `features/<name>/`; reusable engine-agnostic rules in `core/`; adapters in `platform/`; app composition in `app/`. Prefer scene composition and signals over globals. No unbounded Managers/God Objects. No circular feature dependencies.
 3. **Godot scene constraints:** keep `.tscn`, `.tres`, `.gd`, stable resource identifiers and references in sync; check signal wiring, node paths, input actions and renderer. Edit resources with Godot Editor when possible. Don't bulk rename nodes outside the Editor without full reference search.

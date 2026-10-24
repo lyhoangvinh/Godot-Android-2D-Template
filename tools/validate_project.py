@@ -12,12 +12,19 @@ path_pattern = re.compile(r'res://([A-Za-z0-9_./-]+)')
 class_pattern = re.compile(r'^class_name\s+([A-Za-z_][A-Za-z_0-9]*)', re.M)
 classes = {}
 allowed_extensions = {'.gd', '.tscn', '.tres', '.godot', '.cfg', '.json'}
+# English-only policy: flag Latin characters with diacritics used in Vietnamese text.
+non_english_latin_pattern = re.compile(r'[\u00c0-\u00ff\u0102-\u0103\u0110-\u0111\u01a0-\u01b0\u1ea0-\u1ef9]')
 
 for file in ROOT.rglob('*'):
     if not file.is_file() or any(part in {'.git', '.godot'} for part in file.relative_to(ROOT).parts):
         continue
     if file.suffix.lower() in {'.jks', '.keystore', '.p12', '.aab', '.apk'}:
         issues.append(f'Forbidden artifact/secret file: {file.relative_to(ROOT)}')
+    # Documentation and project code must remain English-only.
+    if file.suffix.lower() in {'.md', '.gd', '.tscn', '.tres', '.godot', '.cfg', '.json', '.ps1', '.py', '.txt'}:
+        content_to_check = file.read_text(encoding='utf-8')
+        if non_english_latin_pattern.search(content_to_check):
+            issues.append(f'Non-English accented text detected: {file.relative_to(ROOT)}')
     if file.suffix not in allowed_extensions:
         continue
     checked += 1
@@ -79,5 +86,5 @@ if issues:
     for issue in issues:
         print('ERROR:', issue)
     sys.exit(1)
-print('PASS: references, unique class names, JSON syntax, forbidden signing artifacts')
+print('PASS: references, unique class names, JSON, English-only policy, forbidden signing artifacts')
 print('NOTE: Godot parser, headless runtime, APK/AAB and Android behavior NOT checked.')

@@ -18,8 +18,8 @@ git push -u origin main
 4. On GitHub → **Settings → General → Template repository**. After local tests pass, tag the audited revision:
 
 ```powershell
-git tag v1.0.0
-git push origin v1.0.0
+git tag v1.0.1
+git push origin v1.0.1
 ```
 
 5. A new game should start via **Use this template → Create a new repository**. Set its title in `project.godot`, create a unique Android application/package ID in its own **local** export preset, and create/upload a separate key. Keep game-specific assets and business logic out of the base template.

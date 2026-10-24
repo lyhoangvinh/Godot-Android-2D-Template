@@ -13,6 +13,7 @@ MONETIZATION: [specify target AdMob and Billing placements + actual plugin pins]
 SAVE DATA: [persistent feature IDs and versioned schema]. Must preserve migrations, backup and fixture tests.
 ASSETS: [provide approved sprites or strict asset contract]; never claim unverified art is production-ready.
 ARCHITECTURE RULES: obey AGENTS.md. Use feature-first scenes/components and typed GDScript, avoid global managers and unused systems. No silent major refactors or engine/plugin upgrades.
+LANGUAGE: Everything inside the repository must be in English only, including code identifiers, comments, game UI text, documentation, assets metadata, release notes, test output reports and commit messages. Do not add any Vietnamese text or filenames.
 
 DELIVERY: full portable Godot project ZIP excluding .godot/ cache, signing keys, passwords, APK/AAB. Include project.godot, scripts, scenes, UID files if present, all necessary assets, tests, docs, Android build template only when required and available.
 
