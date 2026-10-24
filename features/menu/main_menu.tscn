@@ -1,0 +1,75 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://features/menu/main_menu.gd" id="1_menu"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_menu")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.0627, 0.1059, 0.1882, 1)
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Content" type="VBoxContainer" parent="Center"]
+layout_mode = 2
+custom_minimum_size = Vector2(570, 0)
+theme_override_constants/separation = 32
+
+[node name="Title" type="Label" parent="Center/Content"]
+layout_mode = 2
+text = "GODOT 2D KIT"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="Center/Content"]
+layout_mode = 2
+text = "A clean Android-first playable foundation"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="BestScore" type="Label" parent="Center/Content"]
+layout_mode = 2
+text = "BEST  0"
+horizontal_alignment = 1
+
+[node name="Coins" type="Label" parent="Center/Content"]
+layout_mode = 2
+text = "COINS  0"
+horizontal_alignment = 1
+
+[node name="StartButton" type="Button" parent="Center/Content"]
+layout_mode = 2
+text = "PLAY DEMO"
+
+[node name="SoundButton" type="Button" parent="Center/Content"]
+layout_mode = 2
+text = "Sound: ON"
+
+[node name="MockAdButton" type="Button" parent="Center/Content"]
+layout_mode = 2
+text = "TEST REWARDED (+5)"
+
+[node name="Notice" type="Label" parent="Center/Content"]
+layout_mode = 2
+text = "TEST MODE ONLY — No real ads or purchases"
+autowrap_mode = 3
+horizontal_alignment = 1
+
+[node name="Status" type="Label" parent="Center/Content"]
+layout_mode = 2
+text = ""
+autowrap_mode = 3
+horizontal_alignment = 1

@@ -1,0 +1,10 @@
+{
+  "schema_version": 999,
+  "profile": {
+    "coins": 9000,
+    "best_score": 9000
+  },
+  "settings": {
+    "sound_enabled": true
+  }
+}

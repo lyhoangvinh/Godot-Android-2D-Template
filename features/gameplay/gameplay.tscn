@@ -1,0 +1,101 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://features/gameplay/gameplay.gd" id="1_gameplay"]
+[ext_resource type="PackedScene" path="res://features/gameplay/arena_world.tscn" id="2_world"]
+[ext_resource type="Script" path="res://features/gameplay/touch_joystick.gd" id="3_joystick"]
+
+[node name="Gameplay" type="Node2D"]
+script = ExtResource("1_gameplay")
+
+[node name="ArenaWorld" parent="." instance=ExtResource("2_world")]
+
+[node name="HudLayer" type="CanvasLayer" parent="."]
+
+[node name="Overlay" type="Control" parent="HudLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Title" type="Label" parent="HudLayer/Overlay"]
+offset_left = 50.0
+offset_top = 58.0
+offset_right = 530.0
+offset_bottom = 115.0
+text = "COIN SURVIVAL"
+
+[node name="Score" type="Label" parent="HudLayer/Overlay"]
+offset_left = 50.0
+offset_top = 121.0
+offset_right = 400.0
+offset_bottom = 165.0
+text = "SCORE  0"
+
+[node name="Hp" type="Label" parent="HudLayer/Overlay"]
+offset_left = 420.0
+offset_top = 125.0
+offset_right = 685.0
+offset_bottom = 165.0
+text = "HP  3"
+horizontal_alignment = 2
+
+[node name="Coins" type="Label" parent="HudLayer/Overlay"]
+offset_left = 50.0
+offset_top = 1110.0
+offset_right = 330.0
+offset_bottom = 1160.0
+text = "COINS  0"
+
+[node name="Info" type="Label" parent="HudLayer/Overlay"]
+offset_left = 275.0
+offset_top = 1178.0
+offset_right = 685.0
+offset_bottom = 1240.0
+text = "Drag the stick or use WASD"
+autowrap_mode = 3
+horizontal_alignment = 2
+
+[node name="PauseButton" type="Button" parent="HudLayer/Overlay"]
+offset_left = 517.0
+offset_top = 49.0
+offset_right = 675.0
+offset_bottom = 113.0
+text = "PAUSE"
+
+[node name="Joystick" type="Control" parent="HudLayer/Overlay"]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 1069.0
+offset_right = 247.0
+offset_bottom = 1267.0
+script = ExtResource("3_joystick")
+
+[node name="CenterModal" type="CenterContainer" parent="HudLayer/Overlay"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 0
+
+[node name="Panel" type="PanelContainer" parent="HudLayer/Overlay/CenterModal"]
+layout_mode = 2
+custom_minimum_size = Vector2(520, 0)
+
+[node name="Contents" type="VBoxContainer" parent="HudLayer/Overlay/CenterModal/Panel"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Result" type="Label" parent="HudLayer/Overlay/CenterModal/Panel/Contents"]
+layout_mode = 2
+text = "GAME OVER"
+horizontal_alignment = 1
+
+[node name="Restart" type="Button" parent="HudLayer/Overlay/CenterModal/Panel/Contents"]
+layout_mode = 2
+text = "RESTART"
+
+[node name="Menu" type="Button" parent="HudLayer/Overlay/CenterModal/Panel/Contents"]
+layout_mode = 2
+text = "MAIN MENU"

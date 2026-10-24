@@ -1,0 +1,25 @@
+# Godot editor cache (re-imported automatically)
+.godot/
+# IDE/system
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+# Android generated outputs and local Gradle cache
+.gradle/
+android/.gradle/
+android/build/
+android/.cxx/
+# Device/signing/export outputs and sensitive settings
+*.apk
+*.aab
+*.jks
+*.keystore
+*.p12
+*.pem
+*.key
+*.env
+.env*
+export_presets.cfg
+# local per-project files
+*.log
